@@ -1,0 +1,12 @@
+Screen {
+    layout: horizontal;
+}
+
+
+.box {
+    height: 1fr;
+    width: 45%;
+    border: solid purple;
+    content-align: center top;
+}
+
