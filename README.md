@@ -6,8 +6,7 @@ Ponies in the terminal.
 This is a TUI interface which uses the derpibooru API, [Textual](https://textual.textualize.io/), [requests](https://requests.readthedocs.io/en/latest/), [Rich](https://rich.readthedocs.io/en/stable/style.html), [Rich Pixels](https://github.com/darrenburns/rich-pixels), and [Pillow](https://pillow.readthedocs.io/en/stable/) to display pictures of characters from My Little Pony in a terminal; Additionally, it displays information about the post of which it originated from on derpibooru. By default, the character selected is random, but the user can edit the search parameters.
 
 # Compatibility
-Currently, this program is based around Linux, so some programs will not work on other operating systems. 
-
+Currently, this program is based around Linux, so it may not work as well on other OS (particularly opening the image in a browser through the hotkey). 
 # Hotkey/Command Usage
 **D** - Toggles dark mode. <br />
 **Space** - Downloads a pony to display. <br />
