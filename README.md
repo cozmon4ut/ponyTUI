@@ -6,13 +6,13 @@ Ponies in the terminal.
 This is a TUI program which uses the derpibooru API, [Textual](https://textual.textualize.io/), [requests](https://requests.readthedocs.io/en/latest/), [Rich](https://rich.readthedocs.io/en/stable/style.html), [Rich Pixels](https://github.com/darrenburns/rich-pixels), and [Pillow](https://pillow.readthedocs.io/en/stable/) to display pictures of characters from My Little Pony in a terminal; Additionally, it displays information about the post of which it originated from on derpibooru. By default, the character selected is random, but the user can edit the search parameters.
 
 # Compatibility
-Currently, this program is based around Linux, so it may not work as well on other OS (particularly opening the image in a browser through the hotkey). 
+Currently, this program is based around Linux. It is tested and working on Windows using the Windows Terminal, but has not been tested on Mac.
 # Hotkey/Command Usage
 **D** - Toggles dark mode. <br />
 **Space** - Downloads a pony to display. <br />
 **C** - Clears the screen. <br />
 **E** - Opens a menu to edit the search term. <br />
-**P** - Opens the link to the image in your default web browser. Currently only works on Linux. <br />
+**P** - Opens the link to the image in your default web browser. <br />
 
 # Installation
 Currently, there is no package for this program. The dependencies must be installed manually. <br />

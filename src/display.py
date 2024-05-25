@@ -1,6 +1,8 @@
 """This file handles displaying the image"""
 import requests
 import booru_api
+import webbrowser
+
      
 def getImg():
     # Grab the image
@@ -15,4 +17,5 @@ def getImg():
             f.write(r.content)
     return post_info
 
- 
+def openInBrowser(link):
+    webbrowser.open(link, new=0, autoraise=True)

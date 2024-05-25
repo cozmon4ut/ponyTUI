@@ -4,14 +4,12 @@ from textual.app import App, ComposeResult, RenderResult
 from textual.screen import Screen
 from textual.widgets import Header, Footer, Input, Static
 from textual.containers import Container
-from textual.geometry import Size
 from rich_pixels import Pixels
 from rich.text import Text
 import PIL
 import display
 import json
 import os
-import subprocess
 import threading
 
 # TODO
@@ -188,8 +186,8 @@ class ponyTUI(App):
         with open("post_info.json", 'r') as f:
             data = json.load(f)
             url = data.get('url')
-            subprocess.Popen(['xdg-open', url])
-    
+            display.openInBrowser(url)
+             
     def action_clear_screen(self) -> None:
         for file in os.listdir("."):
             filename = os.path.basename(file)
