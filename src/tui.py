@@ -107,7 +107,7 @@ class ShowPony(Container):
                 filename = os.path.basename(file) 
                 if filename.startswith("pony"): 
                     if filename.endswith(".webm"):
-                        return Text("Press E to play the video.")
+                        return Text("Press R to play the video.")
                     else:
                         return self.render_image(filename)
 
@@ -141,7 +141,7 @@ class ponyTUI(App):
                 ("c", "clear_screen", "clear"),
                 ("e", "edit_params", "edit search"),
                 ("p", "open_image", "open image"),
-                ("e", "open_video", "open video")]
+                ("r", "open_video", "open video")]
     
     def compose(self) -> ComposeResult:
         yield Header()

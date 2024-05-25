@@ -13,6 +13,7 @@ Currently, this program is based around Linux. It is tested and working on Windo
 **C** - Clears the screen. <br />
 **E** - Opens a menu to edit the search term. <br />
 **P** - Opens the link to the image in your default web browser. <br />
+**R** - Open webm in your default media player. <br /> 
 
 # Installation
 Currently, there is no package for this program. The dependencies must be installed manually. <br />
