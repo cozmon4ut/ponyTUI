@@ -92,15 +92,10 @@ class ShowPony(Container):
     def render_image(self, filename) -> Pixels:
         widget_width = self.size.width 
         widget_height = self.size.height * 2
-         
-        
-        
-        
+          
         with PIL.Image.open(filename) as img:
             img = img.resize((widget_width, widget_height), PIL.Image.Resampling.LANCZOS)
-            img.save(filename)
-        
-        return Pixels.from_image_path(filename)
+            return Pixels.from_image(img)
     
     
     
@@ -110,8 +105,11 @@ class ShowPony(Container):
         else:
             for file in os.listdir("."): 
                 filename = os.path.basename(file) 
-                if filename.startswith("pony"): # add UnidentifiedImageError handling 
-                    return self.render_image(filename)
+                if filename.startswith("pony"): 
+                    if filename.endswith(".webm"):
+                        return Text("Press E to play the video.")
+                    else:
+                        return self.render_image(filename)
 
 class PostInfo(Static):
     
@@ -142,7 +140,8 @@ class ponyTUI(App):
                 ("space", "pony_me", "pony"), 
                 ("c", "clear_screen", "clear"),
                 ("e", "edit_params", "edit search"),
-                ("p", "open_image", "open")]
+                ("p", "open_image", "open image"),
+                ("e", "open_video", "open video")]
     
     def compose(self) -> ComposeResult:
         yield Header()
@@ -187,7 +186,16 @@ class ponyTUI(App):
             data = json.load(f)
             url = data.get('url')
             display.openInBrowser(url)
-             
+
+    def action_open_video(self) -> None:
+        for file in os.listdir('.'):
+            filename = os.path.basename(file)
+            
+            if filename.startswith("pony"):
+                if filename.endswith(".webm"):
+                    display.openVideo(filename)
+    
+    
     def action_clear_screen(self) -> None:
         for file in os.listdir("."):
             filename = os.path.basename(file)
@@ -199,4 +207,3 @@ class ponyTUI(App):
 
     def action_edit_params(self) -> None:
         self.push_screen(EditParams())
-
