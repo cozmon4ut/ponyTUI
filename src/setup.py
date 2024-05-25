@@ -37,10 +37,10 @@ def firstRun():
     
     while True:
         try:
-            confirmation = input("\nWould you like to use an API key? (y/n) \n> ")
+            confirmation = input("\nWould you like to use an API key? This required to make adult searches.\n(y/n) \n> ")
             
             if confirmation == "yes" or confirmation == "y":
-                API_KEY = str(input("\nPlease enter the key now.")) 
+                API_KEY = str(input("\nPlease enter the key now. ")) 
                 
                 print("\nCreating a best-effort parameter config with API key...", end="")
                 
@@ -62,5 +62,4 @@ def firstRun():
         except ValueError:
             print("\nYou have entered some wrong value. Please try again.")
             continue 
-    
- 
+     
