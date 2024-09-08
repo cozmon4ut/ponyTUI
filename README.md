@@ -15,49 +15,60 @@ Currently, this program is based around Linux. It is tested and working on Windo
 **P** - Opens the link to the image in your default web browser. <br />
 **R** - Open webm in your default media player. <br /> 
 
-# Installation
-Currently, there is no package for this program. The dependencies must be installed manually. <br />
-
-
-> Install dependencies: 
-
+# Script Installation (Most Linux Distros)
+A bash script is included which builds the package automatically:
 
 ```
-pip install textual
+chmod +x install.sh
+./install sh
 ```
 <br />
 
-```
-pip install rich
-```
+**This installs the script system-wide with pip, which can rarely lead to issues.**
 
-<br />
+# Manual Installation
 
-```
-pip install rich-pixels
-```
-<br />
+Clone the repo:
 
-```
-pip install Pillow
-```
-<br />
-
-```
-pip install requests
-```
-<br />
-
-> Clone the repo:
 ```
 git clone https://github.com/cozmon4ut/ponyTUI
 ```
 <br />
 
-> Run the main file:
+Go into the source directory and create a virtual environment: 
+
 ```
-python main.py
+python -m venv venv
 ```
+
+Install the required dependencies:
+
+```
+pip install textual rich rich_pixels Pillow requests build
+```
+
+Go back to the root directory and build the program: 
+
+```
+cd ..
+python -m build
+```
+
+If you'd like to contain the program to a venv, install it normally:
+
+```
+pip install dist/ponytui-0.1-py3-none-any.wh1
+```
+
+If you'd like to run it system-wide, deactivate the virtual environment and install it as a super user:
+
+```
+deactivate
+sudo pip install dist/ponytui-0.1-py3-none-any.wh1 --break-system-packages
+```
+
+
+
 
 
 # Roadmap
@@ -66,7 +77,7 @@ I am currently a full-time student who's only been programming for about 2 years
 
 - [ ] 1. More robust error handling
    - This program is currently prone to crashes due to being in its infancy. </br>
-- [ ] 2. Package the program 
+- [x] 2. Package the program 
 - [ ] 3. Kitty term + (when released,) native Textual image support 
 - [ ] 4. Favorites, more menus to adjust settings
 - [ ] 5. API optimizations
