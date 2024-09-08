@@ -20,7 +20,7 @@ A bash script is included which builds the package automatically:
 
 ```
 chmod +x install.sh
-./install sh
+./install.sh
 ```
 <br />
 
