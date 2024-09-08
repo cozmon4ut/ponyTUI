@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+
+[project]
+name = "ponytui"
+version = "0.1"
+description = "Ponies in the terminal using Derpibooru"
+dependencies = ["textual", "rich", "rich_pixels", "Pillow", "requests"]
+
+
+[tool.setuptools]
+packages = ["tui", "params", "display", "booru_api", "main"]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.package-data]
+tui = ["tui.tcss"]
+
+
+[project.scripts]
+ponytui = "main.main:main"

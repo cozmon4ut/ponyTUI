@@ -1,9 +1,9 @@
 import tui
-from setup import firstRun
+from params import firstRun
 from os import path 
 
 
-if __name__ == "__main__":
+def main():
     app =  tui.ponyTUI()
     if path.isfile('params.json'):
         app.run()
@@ -11,3 +11,7 @@ if __name__ == "__main__":
     else:
         firstRun()
         app.run()
+
+if __name__ == "__main__":
+    main()
+
